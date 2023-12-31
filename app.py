@@ -9,7 +9,7 @@ model=pickle.load(open('model.pkl','rb'))
 
 @app.route('/')
 def hello_world():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/predict',methods=['POST','GET'])
@@ -26,9 +26,9 @@ def predict():
     # print(prediction)
 
     if prediction == [4]:
-        return render_template('home.html',pred='Malignant. It is a problem.')
+        return render_template('index.html',pred='Malignant. It is a problem.')
     else:
-        return render_template('home.html',pred='Benign. It is safe.')
+        return render_template('index.html',pred='Benign. It is safe.')
 
 
 if __name__ == '__main__':
